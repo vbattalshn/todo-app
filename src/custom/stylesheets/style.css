@@ -1,0 +1,327 @@
+:root {
+    --background: hsl(0, 0%, 98%);
+    --color: hsl(0, 0%, 13%);
+    --color-2: hsl(0, 0%, 27%);
+    --color-3: hsl(0, 0%, 40%);
+    --color-4: hsl(0, 0%, 98%);
+    --border-color: hsl(0, 0%, 88%);
+    --card-background: hsl(0, 0%, 93%);
+    --card-boxshadow: 0 0 30px 0 hsla(0, 0%, 50%, 0.10);
+    --text-shadow: 0px 3px 3px hsla(0, 0%, 13%, 0.251);
+}
+
+.dark {
+    --background: hsl(0, 0%, 2%);
+    --color: hsl(0, 0%, 87%);
+    --color-2: hsl(0, 0%, 73%);
+    --color-3: hsl(0, 0%, 60%);
+    --border-color: hsl(0, 0%, 12%);
+    --card-background: hsl(0, 0%, 7%);
+    --card-boxshadow: 0 0 30px 0 hsla(0, 0%, 0%, 0.10);
+    --text-shadow: 0px 3px 3px hsla(0, 0%, 87%, 0.251);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-family: "Nunito", sans-serif;
+    transition: all .25s ease 0s;
+}
+
+*, :after, :before {
+    box-sizing: border-box
+}
+
+:focus {
+    outline: 1px auto -webkit-focus-ring-color
+}
+
+body {
+    background: var(--background);
+    overflow: none;
+    content-visibility: auto;
+}
+
+html {
+    overflow-x: none;
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 768px) { html { font-size: 14px }}
+@media screen and (max-width: 465px) { html { font-size: 12px }}
+
+.fullpage {
+    min-width: 100%;
+    width: 100%
+}
+
+.fullheight {
+    min-height: calc(100vh - 7rem);
+    height: 100%
+}
+
+.basepage {
+    max-widtH: 1090px;
+    width: 100%;
+    margin: 0 auto
+}
+
+.centerpage {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+header {
+    width: 100%;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.my-notification {
+    margin: 5px 5px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: auto;
+    background: #ffc233;
+    border-left: 3px solid hsl(42, 70%, 50%)
+}
+
+.my-notification.success {
+    background: hsl(170, 100%, 30%);
+    border-left: 3px solid hsl(170, 70%, 20%)
+}
+
+.my-notification.error {
+    background: hsl(360, 90%, 60%);
+    border-left: 3px solid hsl(360, 60%, 50%)
+}
+
+.notification-content {
+    color: var(--color-4);
+    font-size: 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+footer {
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column
+}
+
+.feature {
+    color: var(--color-3);
+    font-weight: 300
+}
+
+.feature a {
+    color: var(--color);
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    display: inline-block
+}
+
+.feature a:after {
+    content: "";
+    width: 0;
+    height: 2px;
+    display: block;
+    left: 0;
+    background-color: var(--color);
+    transition: all .25s ease 0s
+}
+
+.feature a:focus:after,.feature a:hover:after {
+    width: 100%
+}
+
+.feature:first-child {
+    margin-bottom: 2px
+}
+
+.line {
+    width: 150px;
+    height: 2px;
+    background-color: var(--color-3);
+    border-radius: 5px
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a{
+    color: var(--color-3);
+    font-weight: 600;
+    padding: 10px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all .25s ease 0s;
+}
+
+nav ul li a:hover, nav ul li a:focus{
+    color: var(--color)
+}
+
+nav ul li a.router-link-exact-active{
+    color: var(--color)
+}
+
+.add-todo{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    background: var(--card-background);
+    padding: 5px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: var(--card-boxshadow);
+    transition: all .25s ease 0s;
+}
+
+.add-todo input{
+    width: 90%;
+    padding: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-2);
+    background-color: transparent;
+}
+
+.add-todo input:focus{
+    outline: none;
+}
+
+.add-todo button{
+    width: 8%;
+    right: 0;
+    position: relative;
+    padding: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-4);
+    background-color: hsl(170, 100%, 30%);
+    border-radius: 8px;
+    margin-left: 1%;
+    cursor: pointer;
+    transition: all .25s ease 0s;
+}
+
+.add-todo button:hover, .add-todo button:focus{
+    background-color: hsl(170, 100%, 20%);
+    outline: none;
+}
+
+.todos, .completed-todos{
+    width: 90%;
+    border-radius: 20px;
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--card-boxshadow);
+}
+
+.todos{
+    margin: 20px auto;
+}
+
+.completed-todos{
+    margin: 0px auto;
+}
+
+.todo, .completed-todo{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   
+    border-bottom: 1px solid var(--border-color);
+    user-select: none;
+    color: var(--color-2);
+    background: transparent;
+    font-size: 1rem;
+    font-weight: 300;
+    transition: all .25s ease 0s;
+    padding: 0 10px;
+}
+
+.todo:hover, .todo:focus, .completed-todo:hover, .completed-todo:focus{
+    background-color: var(--card-background-hover);
+    outline: none
+}
+
+.todo:first-child, .completed-todo:first-child{
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+
+
+.todo:last-child, .completed-todo:last-child{
+    border-bottom: none;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+}
+
+.no-todo-found, .no-completed-todo-found{
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.complete-btn, .delete-btn{
+    padding: 5px 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--color-4);
+    transition: all .25s ease 0s;
+}
+
+.delete-btn{
+    background: hsl(360, 90%, 60%);
+}
+
+.complete-btn{
+    background: hsl(170, 100%, 30%);
+}
+
+.delete-btn:hover, .delete-btn:focus{
+    background: hsl(360, 90%, 50%);
+}
+
+.complete-btn:hover, .complete-btn:focus{
+    background: hsl(170, 100%, 20%);
+}
+
+.theme-mode{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--card-boxshadow);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+}
+
+.theme-mode svg{
+    width: 1.5rem;
+    height: 1.5rem;
+}
