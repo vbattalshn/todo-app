@@ -50,4 +50,30 @@ export default{
 <style>
 @import url("./custom/stylesheets/style.css");
 @import url(https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap);
+.my-notification {
+    margin: 5px 5px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: auto;
+    background: #ffc233;
+    border-left: 3px solid hsl(42, 70%, 50%)
+}
+
+.my-notification.success {
+    background: hsl(170, 100%, 30%);
+    border-left: 3px solid hsl(170, 70%, 20%)
+}
+
+.my-notification.error {
+    background: hsl(360, 90%, 60%);
+    border-left: 3px solid hsl(360, 60%, 50%)
+}
+
+.notification-content {
+    color: var(--color-4);
+    font-size: 1rem;
+    text-align: center;
+    font-weight: bold;
+}
 </style>
